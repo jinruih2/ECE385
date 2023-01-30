@@ -1,0 +1,23 @@
+1. how to implement the registers?
+use a simple module to define a register
+two parts: 1) an always_ff that defines the behavior; 2) an assign that defines combinational logic
+for the always_ff section, what only matters is the updating of Data_Out, it's the logic
+
+2. how to implement the alu?
+The adder plus some peripheral logic to convert it into an adder and a subtractor
+
+3. how does the data flow work?
+In the top-level, define some local variables, and use these local variables as bridges for connecting
+
+4. how to connect the registers to Hex display?
+The inputs of the HexDriver are connected to the outputs of the top-level module, and the output is connected to some other outputs of the top-level module. 
+
+
+when reading code:
+
+1. why RippleAdder input has no "logic" keyword?
+equivalent to logic 
+see also: https://stackoverflow.com/questions/5514923/inputs-without-type-in-system-verilog
+
+2. if-else clause in an always_ff procedural block - what's going on?
+I guess they are in order

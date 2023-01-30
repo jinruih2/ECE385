@@ -1,0 +1,31 @@
+QA notes
+- 8:50 Zuofu talks about components needed.
+- 9:40 sramtop uses the module ram, which will be created by the Wizard (QIP).
+- 13:30 for wk1 comment out Mem2IO, the state machine is filled in for us.
+- 14:05 the datapath is everything not RAM, IO or state machine, FETCH is programmed into the state machine already, but registers are needed.
+- 16:00 for wk1, do the memory tutorial, hook the data path together, hook the 4 last bit of Hex to IR. Continue is also included in the state machine.
+- 16:50 one thing to potentially change is more states when waiting
+- 25:40 ALUK: 00=ADD, 01=AND, 10=NOT, 11=do nothing
+
+
+9.26 lecture
+- 18:30 talks about the block diagram
+- 30:05 talks about why we need 3 cycles for the memory "ready" status
+- 34:03 talks about extra states for 33: 33_0 -> 33_1 -> 33_2 -> 35
+- 34:22 some other states that should have wait states: 25, 16
+
+
+Question
++ How to determine the meaning of a signal (e.g. OE)?
+- What are we doing with Mem_OE?
+In slc3.sv, 
+	OE is an output, 
+	assign MIO_EN = OE
+	logic [15:0] MDR_In;
+In controller, 
+	.Mem_OE(OE)
+In Mem2IO
+	.Data_to_CPU(MDR_In)
+In general, MDR takes MDR_In as the memory input
+
++ For MDR, why read from bus when MIO_EN is not 1? It is default behavior or is there a reason for doing so?

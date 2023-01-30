@@ -1,0 +1,6 @@
+01:15:23 **** Clean-only build of configuration Nios II for project vga_color_bsp ****
+make clean 
+[BSP clean complete]
+
+01:15:24 Build Finished (took 488ms)
+

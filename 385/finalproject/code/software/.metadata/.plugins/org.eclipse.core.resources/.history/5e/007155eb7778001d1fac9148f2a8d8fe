@@ -1,0 +1,11 @@
+/*
+ * get_kb.h
+ */
+
+#ifndef GET_KB_H_
+#define GET_KB_H_
+
+
+void get_keycode();
+
+#endif /* GET_KB_H_ */

@@ -1,0 +1,101 @@
+#include "get_kb.h"
+#include "sprite_draw.h"
+#include "game.h"
+
+struct game_state
+{
+	int sprites[ROWS][COLUMNS];
+	int char_x;
+	int char_y;
+	int hp;
+	int atk;
+	int def;
+};
+
+
+int game_play(){
+	BYTE rcode;
+	BOOT_MOUSE_REPORT buf;		//USB mouse report
+	BOOT_KBD_REPORT kbdbuf;
+	BYTE runningdebugflag = 0;//flag to dump out a bunch of information when we first get to USB_STATE_RUNNING
+	BYTE errorflag = 0; //flag once we get an error device so we don't keep dumping out state info
+	BYTE device;
+	WORD keycode;
+	printf("initializing MAX3421E...\n");
+	MAX3421E_init();
+	printf("initializing USB...\n");
+	USB_init();
+
+	//initialize palette
+	for (int i = 0; i < 16; i++)
+	{
+		setColorPalette (i, colors[i].red, colors[i].green, colors[i].blue);
+	}
+
+	// initialize the game
+	struct game_state game;
+	
+	for (int x = 0; x < COLUMNS; ++x){
+		for (int y = 0; y < ROWS; ++y){
+			// game.sprites[y][x] = game_init_sprites[y][x];
+    		drawSpriteAtLocation(game_init_sprites[y][x], x, y);  // draw the first scene
+		}
+	}
+	game.char_x = 4;
+	game.char_y = 6;
+
+    while(1){
+        printf(". \n");
+        MAX3421E_Task();
+		USB_Task();
+		if (GetUsbTaskState() == USB_STATE_RUNNING) {
+			if (!runningdebugflag) {
+				runningdebugflag = 1;
+				device = GetDriverandReport();
+			} else if (device == 1) {
+				//run keyboard debug polling
+				rcode = kbdPoll(&kbdbuf);
+				if (rcode == hrNAK) {
+					continue; //NAK means no new data
+				} else if (rcode) {
+					printf("Rcode: ");
+					printf("%x \n", rcode);
+					continue;
+				}
+				printf("keycodes: ");
+				for (int i = 0; i < 6; i++) {
+					printf("%x ", kbdbuf.keycode[i]);
+				}
+                int key = kbdbuf.keycode[0];
+                switch (key){
+                    case KEY_W:
+						game.sprites[game.char_y][game.char_x] = 0;
+                        game.char_y = game.char_y - 1;
+						game.sprites[game.char_y][game.char_x] = 1;
+                        break;
+                    case KEY_A:
+                        game.sprites[game.char_y][game.char_x] = 0;
+                        game.char_x = game.char_x - 1;
+                        game.sprites[game.char_y][game.char_x] = 1;
+                        break;
+                    case KEY_S:
+                        game.sprites[game.char_y][game.char_x] = 0;
+                        game.char_y = game.char_y + 1;
+                        game.sprites[game.char_y][game.char_x] = 1;
+                        break;
+                    case KEY_D:
+                        game.sprites[game.char_y][game.char_x] = 0;
+                        game.char_x = game.char_x + 1;
+                        game.sprites[game.char_y][game.char_x] = 1;
+                        break;
+                }
+				// for (int x = 0; x < COLUMNS; ++x){
+				// 	for (int y = 0; y < ROWS; ++y){
+				// 		drawSpriteAtLocation(game.sprites[y][x], y, x);  // draw the first scene
+				// 	}
+				// }
+				printf("\n");
+			}
+        }
+    }
+}

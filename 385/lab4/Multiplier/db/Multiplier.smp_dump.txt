@@ -1,0 +1,21 @@
+
+State Machine - |Multiplier|control:Control|curr_state
+Name curr_state.hold_state curr_state.shift_8 curr_state.sub_8 curr_state.shift_7 curr_state.add_7 curr_state.shift_6 curr_state.add_6 curr_state.shift_5 curr_state.add_5 curr_state.shift_4 curr_state.add_4 curr_state.shift_3 curr_state.add_3 curr_state.shift_2 curr_state.add_2 curr_state.shift_1 curr_state.add_1 curr_state.reset_state 
+curr_state.reset_state 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+curr_state.add_1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+curr_state.shift_1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+curr_state.add_2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+curr_state.shift_2 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+curr_state.add_3 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+curr_state.shift_3 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+curr_state.add_4 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+curr_state.shift_4 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+curr_state.add_5 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+curr_state.shift_5 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+curr_state.add_6 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+curr_state.shift_6 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+curr_state.add_7 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+curr_state.shift_7 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+curr_state.sub_8 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+curr_state.shift_8 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+curr_state.hold_state 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 

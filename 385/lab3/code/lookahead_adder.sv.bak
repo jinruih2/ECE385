@@ -1,0 +1,40 @@
+// helper function 1 bit CLA, G = Generated, P = Propagated
+module CLA_1bit(
+    input logic A,B,
+    input logic c_in,
+    output logic S,
+    output logic G,P 
+);
+assign S = A^B^c_in;
+assign G = A & B;   
+assign P = A ^ B;
+
+endmodule
+
+// helper function 4bits CLA, G = Generated, P = Propagated
+module CLA_4bits(
+    input logic [3:0]A,B,
+    input logic c_in,
+    output logic [3:0]S,
+    output logic G,P 
+);
+always_comb begin
+S[0] = c_in 
+end
+endmodule
+
+
+
+module lookahead_adder (
+	input logic  [15:0] A, B,
+	input logic        cin,
+	output logic [15:0] S,
+	output logic        cout
+);
+    /* TODO
+     *
+     * Insert code here to implement a CLA adder.
+     * Your code should be completly combinational (don't use always_ff or always_latch).
+     * Feel free to create sub-modules or other files. */
+
+endmodule

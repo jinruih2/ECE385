@@ -1,0 +1,9 @@
+13:56:27 **** Incremental Build of configuration Nios II for project vga_color1 ****
+make all 
+Info: Building ../vga_color_1_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../vga_color_1_bsp/
+[BSP build complete]
+[vga_color_1 build complete]
+
+13:56:28 Build Finished (took 583ms)
+

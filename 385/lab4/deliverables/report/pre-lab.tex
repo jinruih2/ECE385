@@ -1,0 +1,22 @@
+\begin{table}[h]
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|l|c|c|c|c|l|}
+    \hline
+    Function                                                            & X & A         & B                         & M & Comments for   the next step                                                                                           \\ \hline
+    \begin{tabular}[c]{@{}l@{}}Clear A, \\ LoadB, \\ Reset\end{tabular} & 0 & 0000 0000 & \textit{00000111}         & 1 & \begin{tabular}[c]{@{}l@{}}Since   M = 1, multiplicand (available from \\ switches S) will be added to A.\end{tabular} \\ \hline
+    ADD                                                                 & 1 & 1100 0101 & \textit{00000111}         & 1 & Shift XAB by one bit   after ADD complete                                                                              \\ \hline
+    SHIFT                                                               & 1 & 1110 0010 & 1 \textit{0000011}        & 1 & Add S to A since M =   1                                                                                               \\ \hline
+    ADD                                                                 & 1 & 1010 0111 & 1 \textit{0000011}        & 1 & Shift XAB by one bit   after ADD complete                                                                              \\ \hline
+    SHIFT                                                               & 1 & 1101 0011 & 11 \textit{000001}        & 1 & Add S to A since M =   1                                                                                               \\ \hline
+    ADD                                                                 & 1 & 1001 1000 & 11 \textit{000001}        & 1 & Shift XAB by one bit   after ADD complete                                                                              \\ \hline
+    SHIFT                                                               & 1 & 1100 1100 & 011 \textit{00000}        & 0 & Do not add S to A   since M = 0. Shift XAB.                                                                            \\ \hline
+    SHIFT                                                               & 1 & 1110 0110 & 0011 \textit{0000}        & 0 & Do not add S to A   since M = 0. Shift XAB.                                                                            \\ \hline
+    SHIFT                                                               & 1 & 1111 0011 & 00011 \textit{000}        & 0 & Do not add S to A   since M = 0. Shift XAB.                                                                            \\ \hline
+    SHIFT                                                               & 1 & 1111 1001 & 100011 \textit{00}        & 0 & Do not add S to A   since M = 0. Shift XAB.                                                                            \\ \hline
+    SHIFT                                                               & 1 & 1111 1100 & 1100011 \textit{0}        & 0 & Do not add S to A   since M = 0. Shift XAB.                                                                            \\ \hline
+    SHIFT                                                               & 1 & 1111 1110 & 01100011                  & 1 & 8$^{th}$ shift done. Stop.   16-bit Product in AB.                                                                          \\ \hline
+    \end{tabular}}
+    \caption{The Calculating Process of ``11000101 $\times$ 00000111'' by the Multiplier Circuit}
+    \label{tab:pre-lab}
+    \end{table}
+    

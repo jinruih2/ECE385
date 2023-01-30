@@ -1,0 +1,105 @@
+# Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# do Multiplier_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work +incdir+C:/WORKPLACE/ece385/lab4/Multiplier {C:/WORKPLACE/ece385/lab4/Multiplier/Reg_8.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:23:43 on Oct 03,2022
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/WORKPLACE/ece385/lab4/Multiplier" C:/WORKPLACE/ece385/lab4/Multiplier/Reg_8.sv 
+# -- Compiling module reg_8
+# -- Compiling module reg_1
+# 
+# Top level modules:
+# 	reg_8
+# 	reg_1
+# End time: 18:23:44 on Oct 03,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/WORKPLACE/ece385/lab4/Multiplier {C:/WORKPLACE/ece385/lab4/Multiplier/HexDriver.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:23:44 on Oct 03,2022
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/WORKPLACE/ece385/lab4/Multiplier" C:/WORKPLACE/ece385/lab4/Multiplier/HexDriver.sv 
+# -- Compiling module HexDriver
+# 
+# Top level modules:
+# 	HexDriver
+# End time: 18:23:44 on Oct 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/WORKPLACE/ece385/lab4/Multiplier {C:/WORKPLACE/ece385/lab4/Multiplier/Control.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:23:44 on Oct 03,2022
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/WORKPLACE/ece385/lab4/Multiplier" C:/WORKPLACE/ece385/lab4/Multiplier/Control.sv 
+# -- Compiling module control
+# 
+# Top level modules:
+# 	control
+# End time: 18:23:44 on Oct 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/WORKPLACE/ece385/lab4/Multiplier {C:/WORKPLACE/ece385/lab4/Multiplier/Adder.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:23:44 on Oct 03,2022
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/WORKPLACE/ece385/lab4/Multiplier" C:/WORKPLACE/ece385/lab4/Multiplier/Adder.sv 
+# -- Compiling module FullAdder
+# -- Compiling module RippleAdder
+# -- Compiling module Add_Sub_9
+# 
+# Top level modules:
+# 	Add_Sub_9
+# End time: 18:23:44 on Oct 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/WORKPLACE/ece385/lab4/Multiplier {C:/WORKPLACE/ece385/lab4/Multiplier/Multiplier.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:23:44 on Oct 03,2022
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/WORKPLACE/ece385/lab4/Multiplier" C:/WORKPLACE/ece385/lab4/Multiplier/Multiplier.sv 
+# -- Compiling module Multiplier
+# 
+# Top level modules:
+# 	Multiplier
+# End time: 18:23:44 on Oct 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -sv -work work +incdir+C:/WORKPLACE/ece385/lab4/Multiplier {C:/WORKPLACE/ece385/lab4/Multiplier/testbench.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:23:44 on Oct 03,2022
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/WORKPLACE/ece385/lab4/Multiplier" C:/WORKPLACE/ece385/lab4/Multiplier/testbench.sv 
+# -- Compiling module testbench
+# 
+# Top level modules:
+# 	testbench
+# End time: 18:23:44 on Oct 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  testbench
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" testbench 
+# Start time: 18:23:45 on Oct 03,2022
+# Loading sv_std.std
+# Loading work.testbench
+# Loading work.Multiplier
+# Loading work.reg_8
+# Loading work.reg_1
+# Loading work.control
+# Loading work.Add_Sub_9
+# Loading work.RippleAdder
+# Loading work.HexDriver
+# Loading work.FullAdder
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run 10000 ns
+# ** Warning: (vsim-8315) C:/WORKPLACE/ece385/lab4/Multiplier/Control.sv(34): No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/multiplier/Control
+restart -f; run 3500ns
+# ** Warning: (vsim-8315) C:/WORKPLACE/ece385/lab4/Multiplier/Control.sv(34): No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/multiplier/Control
+# End time: 19:13:37 on Oct 03,2022, Elapsed time: 0:49:52
+# Errors: 0, Warnings: 2

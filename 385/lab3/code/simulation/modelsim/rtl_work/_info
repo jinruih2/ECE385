@@ -1,0 +1,211 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/WORKPLACE/ece385/lab3/code/simulation/modelsim
+vadder2
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1664165241
+!i10b 1
+!s100 XG;QJGb9T^01LGojd_1ZO0
+I=h]UXX9Z9eo=ojEaDaKUE2
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 adder2_sv_unit
+S1
+R0
+w1663340364
+8C:/WORKPLACE/ece385/lab3/code/adder2.sv
+FC:/WORKPLACE/ece385/lab3/code/adder2.sv
+L0 1
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1664165241.000000
+!s107 C:/WORKPLACE/ece385/lab3/code/adder2.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/WORKPLACE/ece385/lab3/code|C:/WORKPLACE/ece385/lab3/code/adder2.sv|
+!i113 1
+Z6 o-sv -work work
+Z7 !s92 -sv -work work +incdir+C:/WORKPLACE/ece385/lab3/code
+Z8 tCvgOpt 0
+vcontrol
+R1
+R2
+!i10b 1
+!s100 4^T<MW:^Hhf;SGQ2_b=Kk3
+IeXLSGM2dAm29Dhl;[gS0:0
+R3
+!s105 control_sv_unit
+S1
+R0
+w1420571584
+8C:/WORKPLACE/ece385/lab3/code/control.sv
+FC:/WORKPLACE/ece385/lab3/code/control.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/WORKPLACE/ece385/lab3/code/control.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/WORKPLACE/ece385/lab3/code|C:/WORKPLACE/ece385/lab3/code/control.sv|
+!i113 1
+R6
+R7
+R8
+vfull_adder
+R1
+Z9 !s110 1664165240
+!i10b 1
+!s100 >omj_`Uh]d199Ga_0SWRg2
+IQYm;^A1fHnV=VNWV35Oeg1
+R3
+Z10 !s105 ripple_adder_sv_unit
+S1
+R0
+Z11 w1663278632
+Z12 8C:/WORKPLACE/ece385/lab3/code/ripple_adder.sv
+Z13 FC:/WORKPLACE/ece385/lab3/code/ripple_adder.sv
+L0 2
+R4
+r1
+!s85 0
+31
+Z14 !s108 1664165240.000000
+Z15 !s107 C:/WORKPLACE/ece385/lab3/code/ripple_adder.sv|
+Z16 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/WORKPLACE/ece385/lab3/code|C:/WORKPLACE/ece385/lab3/code/ripple_adder.sv|
+!i113 1
+R6
+R7
+R8
+vHexDriver
+R1
+R9
+!i10b 1
+!s100 F7dDJLKONLDlAhT4ll@HA3
+I>>F<cUh@z2]C=_?VT>jY>0
+R3
+!s105 HexDriver_sv_unit
+S1
+R0
+w1420571504
+8C:/WORKPLACE/ece385/lab3/code/HexDriver.sv
+FC:/WORKPLACE/ece385/lab3/code/HexDriver.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R14
+!s107 C:/WORKPLACE/ece385/lab3/code/HexDriver.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/WORKPLACE/ece385/lab3/code|C:/WORKPLACE/ece385/lab3/code/HexDriver.sv|
+!i113 1
+R6
+R7
+R8
+n@hex@driver
+vreg_17
+R1
+R9
+!i10b 1
+!s100 TzXnY51aIaIZFVKcdA[Wn1
+I6K34;dPo<nH^K5b]kYd4Z1
+R3
+!s105 reg_17_sv_unit
+S1
+R0
+w1420570506
+8C:/WORKPLACE/ece385/lab3/code/reg_17.sv
+FC:/WORKPLACE/ece385/lab3/code/reg_17.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R14
+!s107 C:/WORKPLACE/ece385/lab3/code/reg_17.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/WORKPLACE/ece385/lab3/code|C:/WORKPLACE/ece385/lab3/code/reg_17.sv|
+!i113 1
+R6
+R7
+R8
+vripple_adder
+R1
+R9
+!i10b 1
+!s100 2Em9T8GJZN[oag:X@1BkQ1
+IHJ^H`VZf7YdaQ7Uj_nnHS2
+R3
+R10
+S1
+R0
+R11
+R12
+R13
+L0 11
+R4
+r1
+!s85 0
+31
+R14
+R15
+R16
+!i113 1
+R6
+R7
+R8
+vrouter
+R1
+R9
+!i10b 1
+!s100 0oS5^3aI5<4lR1GZZPnaj2
+IXb0Zc?:S47l8Nmb0nP^H31
+R3
+!s105 router_sv_unit
+S1
+R0
+w1420571552
+8C:/WORKPLACE/ece385/lab3/code/router.sv
+FC:/WORKPLACE/ece385/lab3/code/router.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R14
+!s107 C:/WORKPLACE/ece385/lab3/code/router.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/WORKPLACE/ece385/lab3/code|C:/WORKPLACE/ece385/lab3/code/router.sv|
+!i113 1
+R6
+R7
+R8
+vtestbench
+R1
+R2
+!i10b 1
+!s100 D2Ih>gK?W6fJP[aBAg<Me3
+IHllT74Y]:afNgO]bfX^X=2
+R3
+!s105 testbench_sv_unit
+S1
+R0
+w1664164130
+8C:/WORKPLACE/ece385/lab3/code/testbench.sv
+FC:/WORKPLACE/ece385/lab3/code/testbench.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/WORKPLACE/ece385/lab3/code/testbench.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/WORKPLACE/ece385/lab3/code|C:/WORKPLACE/ece385/lab3/code/testbench.sv|
+!i113 1
+R6
+R7
+R8

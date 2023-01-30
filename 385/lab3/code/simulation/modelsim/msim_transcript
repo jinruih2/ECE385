@@ -1,0 +1,156 @@
+# Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# do adder2_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work +incdir+C:/WORKPLACE/ece385/lab3/code {C:/WORKPLACE/ece385/lab3/code/router.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:07:20 on Sep 25,2022
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/WORKPLACE/ece385/lab3/code" C:/WORKPLACE/ece385/lab3/code/router.sv 
+# -- Compiling module router
+# 
+# Top level modules:
+# 	router
+# End time: 23:07:20 on Sep 25,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/WORKPLACE/ece385/lab3/code {C:/WORKPLACE/ece385/lab3/code/ripple_adder.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:07:20 on Sep 25,2022
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/WORKPLACE/ece385/lab3/code" C:/WORKPLACE/ece385/lab3/code/ripple_adder.sv 
+# -- Compiling module full_adder
+# -- Compiling module ripple_adder
+# 
+# Top level modules:
+# 	ripple_adder
+# End time: 23:07:20 on Sep 25,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/WORKPLACE/ece385/lab3/code {C:/WORKPLACE/ece385/lab3/code/reg_17.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:07:20 on Sep 25,2022
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/WORKPLACE/ece385/lab3/code" C:/WORKPLACE/ece385/lab3/code/reg_17.sv 
+# -- Compiling module reg_17
+# 
+# Top level modules:
+# 	reg_17
+# End time: 23:07:20 on Sep 25,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/WORKPLACE/ece385/lab3/code {C:/WORKPLACE/ece385/lab3/code/HexDriver.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:07:20 on Sep 25,2022
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/WORKPLACE/ece385/lab3/code" C:/WORKPLACE/ece385/lab3/code/HexDriver.sv 
+# -- Compiling module HexDriver
+# 
+# Top level modules:
+# 	HexDriver
+# End time: 23:07:20 on Sep 25,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/WORKPLACE/ece385/lab3/code {C:/WORKPLACE/ece385/lab3/code/control.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:07:21 on Sep 25,2022
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/WORKPLACE/ece385/lab3/code" C:/WORKPLACE/ece385/lab3/code/control.sv 
+# -- Compiling module control
+# 
+# Top level modules:
+# 	control
+# End time: 23:07:21 on Sep 25,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/WORKPLACE/ece385/lab3/code {C:/WORKPLACE/ece385/lab3/code/adder2.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:07:21 on Sep 25,2022
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/WORKPLACE/ece385/lab3/code" C:/WORKPLACE/ece385/lab3/code/adder2.sv 
+# -- Compiling module adder2
+# 
+# Top level modules:
+# 	adder2
+# End time: 23:07:21 on Sep 25,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -sv -work work +incdir+C:/WORKPLACE/ece385/lab3/code {C:/WORKPLACE/ece385/lab3/code/testbench.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:07:21 on Sep 25,2022
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/WORKPLACE/ece385/lab3/code" C:/WORKPLACE/ece385/lab3/code/testbench.sv 
+# -- Compiling module testbench
+# 
+# Top level modules:
+# 	testbench
+# End time: 23:07:21 on Sep 25,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  testbench
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" testbench 
+# Start time: 23:07:21 on Sep 25,2022
+# Loading sv_std.std
+# Loading work.testbench
+# Loading work.adder2
+# Loading work.control
+# Loading work.router
+# Loading work.reg_17
+# Loading work.ripple_adder
+# Loading work.full_adder
+# Loading work.HexDriver
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run 1000 ns
+# ** Warning: (vsim-8315) C:/WORKPLACE/ece385/lab3/code/router.sv(135): No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/testadder/route
+# ** Warning: (vsim-8315) C:/WORKPLACE/ece385/lab3/code/router.sv(127): No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/testadder/route
+# ** Warning: (vsim-8315) C:/WORKPLACE/ece385/lab3/code/router.sv(119): No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/testadder/route
+# ** Warning: (vsim-8315) C:/WORKPLACE/ece385/lab3/code/router.sv(111): No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/testadder/route
+# ** Warning: (vsim-8315) C:/WORKPLACE/ece385/lab3/code/router.sv(103): No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/testadder/route
+# ** Warning: (vsim-8315) C:/WORKPLACE/ece385/lab3/code/router.sv(96): No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/testadder/route
+# ** Warning: (vsim-8315) C:/WORKPLACE/ece385/lab3/code/router.sv(88): No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/testadder/route
+# ** Warning: (vsim-8315) C:/WORKPLACE/ece385/lab3/code/router.sv(80): No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/testadder/route
+# ** Warning: (vsim-8315) C:/WORKPLACE/ece385/lab3/code/router.sv(72): No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/testadder/route
+# ** Warning: (vsim-8315) C:/WORKPLACE/ece385/lab3/code/router.sv(64): No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/testadder/route
+# ** Warning: (vsim-8315) C:/WORKPLACE/ece385/lab3/code/router.sv(56): No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/testadder/route
+# ** Warning: (vsim-8315) C:/WORKPLACE/ece385/lab3/code/router.sv(48): No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/testadder/route
+# ** Warning: (vsim-8315) C:/WORKPLACE/ece385/lab3/code/router.sv(40): No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/testadder/route
+# ** Warning: (vsim-8315) C:/WORKPLACE/ece385/lab3/code/router.sv(33): No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/testadder/route
+# ** Warning: (vsim-8315) C:/WORKPLACE/ece385/lab3/code/router.sv(25): No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/testadder/route
+# ** Warning: (vsim-8315) C:/WORKPLACE/ece385/lab3/code/router.sv(17): No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/testadder/route
+# ** Warning: (vsim-8315) C:/WORKPLACE/ece385/lab3/code/router.sv(9): No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/testadder/route
+# ** Warning: (vsim-8315) C:/WORKPLACE/ece385/lab3/code/control.sv(19): No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/testadder/run_once
+# ** Warning: (vsim-8315) C:/WORKPLACE/ece385/lab3/code/router.sv(127): No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 1  Instance: /testbench/testadder/route
+# ** Warning: (vsim-8315) C:/WORKPLACE/ece385/lab3/code/router.sv(119): No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 1  Instance: /testbench/testadder/route
+# ** Warning: (vsim-8315) C:/WORKPLACE/ece385/lab3/code/router.sv(111): No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 1  Instance: /testbench/testadder/route
+# ** Warning: (vsim-8315) C:/WORKPLACE/ece385/lab3/code/router.sv(103): No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 1  Instance: /testbench/testadder/route
+# ** Warning: (vsim-8315) C:/WORKPLACE/ece385/lab3/code/router.sv(96): No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 1  Instance: /testbench/testadder/route
+# ** Warning: (vsim-8315) C:/WORKPLACE/ece385/lab3/code/router.sv(88): No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 1  Instance: /testbench/testadder/route
+# ** Warning: (vsim-8315) C:/WORKPLACE/ece385/lab3/code/control.sv(19): No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 2  Instance: /testbench/testadder/run_once
+# End time: 10:47:05 on Sep 26,2022, Elapsed time: 11:39:44
+# Errors: 0, Warnings: 25

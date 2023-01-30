@@ -1,0 +1,190 @@
+#include "get_kb.h"
+#include "sprite_draw.h"
+#include "game.h"
+
+struct game_state
+{
+	enum Elements sprites[ROWS][COLUMNS];
+	int char_x;
+	int char_y;
+	int hp;
+	int atk;
+	int gold;
+	int key_y;
+	int key_b;
+};
+
+int game_init_sprites[15][20] = {
+	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+	{0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 18, 14, 22, 16, 0},
+	{0, 2, 12, 11, 3, 4, 3, 11, 11, 11, 11, 11, 11, 2, 0, 29, 26, 14, 26, 0},
+	{0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 11, 2, 0, 0, 0, 0, 0, 0},
+	{0, 2, 11, 11, 11, 7, 11, 2, 11, 11, 11, 2, 11, 2, 0, 0, 0, 0, 0, 0},
+	{0, 2, 11, 11, 11, 2, 11, 2, 11, 11, 11, 2, 11, 2, 0, 19, 0, 30, 28, 0},
+	{0, 2, 2, 7, 2, 2, 11, 2, 2, 2, 7, 2, 11, 2, 0, 14, 0, 30, 28, 0},
+	{0, 2, 11, 11, 11, 2, 11, 7, 11, 11, 11, 2, 11, 2, 0, 18, 0, 0, 28, 0},
+	{0, 2, 11, 11, 11, 2, 11, 2, 2, 2, 2, 2, 11, 2, 0, 0, 0, 0, 0, 0},
+	{0, 2, 2, 7, 2, 2, 11, 11, 11, 11, 11, 11, 11, 2, 0, 0, 0, 0, 0, 0},
+	{0, 2, 11, 11, 11, 2, 2, 7, 2, 2, 2, 7, 2, 2, 0, 20, 30, 0, 30, 0},
+	{0, 2, 11, 11, 11, 2, 11, 11, 11, 2, 11, 11, 11, 2, 0, 20, 31, 0, 28, 0},
+	{0, 2, 11, 11, 11, 2, 11, 1, 11, 2, 11, 11, 11, 2, 0, 0, 0, 0, 0, 0},
+	{0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0},
+	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+};
+
+void register_sprite(struct game_state* game_ptr, int x, int y){
+	enum Elements sprite = game_ptr->sprites[y][x];
+	drawSpriteAtLocation(sprite, x, y);
+}
+
+void update_key_y(struct game_state* game_ptr, int key_num){
+	switch (key_num){
+		case 0:
+			game_ptr -> sprites[11][18] = NUM_0;
+			game_ptr -> sprites[11][17] = BLACK;
+			break;
+		case 1:
+			game_ptr -> sprites[11][18] = NUM_1;
+			game_ptr -> sprites[11][17] = BLACK;
+			break;
+		case 2:
+			game_ptr -> sprites[11][18] = NUM_2;
+			game_ptr -> sprites[11][17] = BLACK;
+			break;
+		int y = 11;
+		for (int x = 17; x <= 18; ++x){
+			register_sprite(game_ptr, x, y);
+		}
+	}
+}
+
+
+int game_play(){
+	BYTE rcode;
+	BOOT_MOUSE_REPORT buf;		//USB mouse report
+	BOOT_KBD_REPORT kbdbuf;
+	BYTE runningdebugflag = 0;//flag to dump out a bunch of information when we first get to USB_STATE_RUNNING
+	BYTE errorflag = 0; //flag once we get an error device so we don't keep dumping out state info
+	BYTE device;
+	WORD keycode;
+	printf("initializing MAX3421E...\n");
+	MAX3421E_init();
+	printf("initializing USB...\n");
+	USB_init();
+
+	//initialize palette
+	for (int i = 0; i < 16; i++)
+	{
+		setColorPalette (i, colors[i].red, colors[i].green, colors[i].blue);
+	}
+
+	// initialize the game
+	struct game_state game;
+	game.char_x = 7;
+	game.char_y = 12;
+	game.hp = 10;
+	game.atk = 10;
+	game.gold = 0;
+	game.key_y = 1;
+	game.key_b = 0;
+	for (int x = 0; x < COLUMNS; ++x){
+		for (int y = 0; y < ROWS; ++y){
+			game.sprites[y][x] = game_init_sprites[y][x];
+    		register_sprite(&game, x, y);
+		}
+	}
+
+
+	// main loop
+    while(1){
+        printf(". \n");
+        MAX3421E_Task();
+		USB_Task();
+		if (GetUsbTaskState() == USB_STATE_RUNNING) {
+			if (!runningdebugflag) {
+				runningdebugflag = 1;
+				device = GetDriverandReport();
+			} else if (device == 1) {
+				//run keyboard debug polling
+				rcode = kbdPoll(&kbdbuf);
+				if (rcode == hrNAK) {
+					continue; //NAK means no new data
+				} else if (rcode) {
+					printf("Rcode: ");
+					printf("%x \n", rcode);
+					continue;
+				}
+				// printf("keycodes: ");
+				// for (int i = 0; i < 6; i++) {
+				// 	printf("%x ", kbdbuf.keycode[i]);
+				// }
+                int key = kbdbuf.keycode[0];
+				int intended_x;
+				int intended_y;
+				
+                switch (key){
+                    case KEY_W:
+						intended_x = game.char_x;
+						intended_y = game.char_y - 1;
+                        break;
+                    case KEY_A:
+                        intended_x = game.char_x - 1;
+                        intended_y = game.char_y;
+                        break;
+                    case KEY_S:
+						intended_x = game.char_x;
+                        intended_y = game.char_y + 1;
+                        break;
+                    case KEY_D:
+                        intended_x = game.char_x + 1;
+                        intended_y = game.char_y;
+                        break;
+					default:
+						intended_x = game.char_x;
+						intended_y = game.char_y;
+						break;
+                }
+
+				switch (game.sprites[intended_y][intended_x]){
+					case BRAVER:
+						break;
+					case WALL:
+						break;
+					// case MONSTER_G:
+					// case MONSTER_R:
+					// case MONSTER_S:
+					case GROUND:
+						game.sprites[game.char_y][game.char_x] = GROUND;
+						register_sprite(&game, game.char_x, game.char_y);
+						game.char_x = intended_x;
+						game.char_y = intended_y;
+						game.sprites[game.char_y][game.char_x] = BRAVER;
+						register_sprite(&game, game.char_x, game.char_y);
+					case DOOR_Y:
+						printf("Recognized a door-Y!");
+						if (game.key_y > 0){
+							printf("Working!");
+							printf("intended: %d %d", intended_x, intended_y);
+							game.key_y -= 1;
+							game.sprites[game.char_y][game.char_x] = GROUND;
+							register_sprite(&game, game.char_x, game.char_y);
+							game.char_x = intended_x;
+							game.char_y = intended_y;
+							game.sprites[game.char_y][game.char_x] = BRAVER;
+							register_sprite(&game, game.char_x, game.char_y);
+							update_key_y(&game, game.key_y);
+							break;
+						}
+						else{
+							printf("Not enough keys? Got %d", game.key_y);
+							break;
+						}
+					default:
+						break;
+				}
+
+				// printf("\n");
+			}
+        }
+    }
+}

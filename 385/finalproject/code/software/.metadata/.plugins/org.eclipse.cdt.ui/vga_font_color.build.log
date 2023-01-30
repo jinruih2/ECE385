@@ -1,0 +1,6 @@
+01:17:38 **** Clean-only build of configuration Nios II for project vga_font_color ****
+make clean 
+[vga_font_color clean complete]
+
+01:17:38 Build Finished (took 340ms)
+

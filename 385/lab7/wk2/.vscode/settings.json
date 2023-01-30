@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "text_mode_vga.h": "c",
+        "palette_test.h": "c"
+    }
+}

@@ -1,0 +1,16 @@
+01:13:45 **** Incremental Build of configuration Nios II for project vga_font ****
+make all 
+Info: Building ../vga_font_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../vga_font_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../vga_font_bsp//HAL/inc -I../vga_font_bsp/ -I../vga_font_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+Info: Linking vga_font.elf
+nios2-elf-g++  -T'../vga_font_bsp//linker.x' -msys-crt0='../vga_font_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../vga_font_bsp/   -Wl,-Map=vga_font.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o vga_font.elf obj/default/main.o obj/default/text_mode_vga.o -lm -msys-lib=m
+obj/default/main.o: In function `main':
+C:\Users\liamx\ece385\lab7\wk2\code\software\vga_font/main.c:4: undefined reference to `paletteTest'
+collect2.exe: error: ld returned 1 exit status
+make: *** [vga_font.elf] Error 1
+
+01:13:46 Build Finished (took 1s.597ms)
+

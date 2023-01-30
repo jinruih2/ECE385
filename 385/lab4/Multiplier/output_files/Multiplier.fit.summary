@@ -1,0 +1,18 @@
+Fitter Status : Successful - Mon Oct 03 20:56:14 2022
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : Multiplier
+Top-level Entity Name : Multiplier
+Family : MAX 10
+Device : 10M50DAF484C7G
+Timing Models : Final
+Total logic elements : 102 / 49,760 ( < 1 % )
+    Total combinational functions : 102 / 49,760 ( < 1 % )
+    Dedicated logic registers : 35 / 49,760 ( < 1 % )
+Total registers : 35
+Total pins : 56 / 360 ( 16 % )
+Total virtual pins : 0
+Total memory bits : 0 / 1,677,312 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 288 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )
+UFM blocks : 0 / 1 ( 0 % )
+ADC blocks : 0 / 2 ( 0 % )
